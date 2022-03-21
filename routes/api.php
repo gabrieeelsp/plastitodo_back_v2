@@ -23,6 +23,7 @@ use App\Http\Controllers\api\v1\DebitnoteController;
 
 use App\Http\Controllers\api\v1\PaymentmethodController;
 use App\Http\Controllers\api\v1\PaymentController;
+use App\Http\Controllers\api\v1\RefondController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +86,7 @@ Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
     Route::resource('debitnotes', DebitnoteController::class)->only(['store']);
 
     Route::resource('payments', PaymentController::class)->only(['store']);
+    Route::resource('refonds', RefondController::class)->only(['store']);
 
     Route::resource('paymentmethods', PaymentmethodController::class)->only(['index', 'show']);
 });
