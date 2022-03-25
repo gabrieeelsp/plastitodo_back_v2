@@ -25,6 +25,8 @@ use App\Http\Controllers\api\v1\PaymentmethodController;
 use App\Http\Controllers\api\v1\PaymentController;
 use App\Http\Controllers\api\v1\RefondController;
 
+use App\Http\Controllers\api\v1\ComprobanteController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -89,6 +91,8 @@ Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
     Route::resource('refonds', RefondController::class)->only(['store']);
 
     Route::resource('paymentmethods', PaymentmethodController::class)->only(['index', 'show']);
+
+    Route::post('comprobantes/create_fa', [ComprobanteController::class, 'create_FA']);
 });
 
 
